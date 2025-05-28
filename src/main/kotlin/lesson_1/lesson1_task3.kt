@@ -5,8 +5,8 @@ fun main() {
     val yearOfFlight: Int = 1961
 
     // Время взлета — изменяемое (впоследствии меняется на время посадки), поэтому var
-    var launchHour: Int = 9
-    var launchMinute: Int = 7
+    var launchHour: String = "09"
+    var launchMinute: String = "07"
 
     // Выводим год и время взлета
     println(yearOfFlight)
@@ -14,8 +14,8 @@ fun main() {
     println(launchMinute)
 
     // Меняем время на посадку
-    launchHour = 10
-    launchMinute = 55
+    launchHour = "15"
+    launchMinute = "42"
 
     // Выводим время посадки в формате "часы:минуты" без переноса после часов
     print("$launchHour:")
