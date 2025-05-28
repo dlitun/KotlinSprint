@@ -1,20 +1,15 @@
 package lesson_5
 
 fun main() {
-    // Общее количество секунд
+    const val SECONDS_IN_HOUR = 3600
+    const val SECONDS_IN_MINUTE = 60
+
     val totalSeconds = 6480
 
-    // Считаем часы
-    val hours = totalSeconds / 3600
+    val hours = totalSeconds / SECONDS_IN_HOUR
+    val remainingSeconds = totalSeconds % SECONDS_IN_HOUR
+    val minutes = remainingSeconds / SECONDS_IN_MINUTE
+    val seconds = remainingSeconds % SECONDS_IN_MINUTE
 
-    // Считаем оставшиеся секунды после часов
-    val remainingSeconds = totalSeconds % 3600
-
-    // Считаем минуты
-    val minutes = remainingSeconds / 60
-
-    // Считаем оставшиеся секунды после минут
-    val seconds = remainingSeconds % 60
-
-    println("$hours:$minutes:$seconds")
+    println(String.format("%02d:%02d:%02d", hours, minutes, seconds))
 }
