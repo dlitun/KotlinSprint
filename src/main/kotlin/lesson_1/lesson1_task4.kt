@@ -1,35 +1,17 @@
 package lesson_4
 
 fun main() {
-    // Расстояние, которое пролетел Гагарин, пока был в космосе в миллиметрах
-    // Очень большое число, подойдёт Long
-    val length: Long = 40_868_600_000L
+    val flightDistanceMm: Long = 40_868_600_000L
+    val cosmonautAge: Byte = 27
+    val flightFractionOfDay: Float = 0.075f
+    val flightDurationSeconds: Short = 6480
+    val flightFractionOfYear: Double = 2.0547945205479453E-4
+    val orbitApogeeMeters: Int = 327000
 
-    // Возраст Гагарина на момент полета (целых лет)
-    // Помещается в Byte (от -128 до 127)
-    val age: Byte = 27
-
-    // Какую часть дня Гагарин провел в космосе
-    // Дробное число, Float достаточно точен для 0.075
-    val partOfDay: Float = 0.075f
-
-    // Количество секунд, которое Гагарин провел в космосе
-    // Помещается в Short (от -32768 до 32767)
-    val seconds: Short = 6480
-
-    // Какую часть года Гагарин провел в космосе
-    // Очень маленькое дробное число, Double для точности
-    val partOfYear: Double = 2.0547945205479453E-4
-
-    // Апогей орбиты Гагарина в метрах
-    // Помещается в Int
-    val apogee: Int = 327000
-
-    // Выводим все переменные в столбик
-    println("Расстояние: $length")
-    println("Возраст: $age")
-    println("Часть дня: $partOfDay")
-    println("Секунды: $seconds")
-    println("Часть года: $partOfYear")
-    println("Апогей орбиты: $apogee")
+    println("Расстояние: $flightDistanceMm")
+    println("Возраст: $cosmonautAge")
+    println("Часть дня: $flightFractionOfDay")
+    println("Секунды: $flightDurationSeconds")
+    println("Часть года: $flightFractionOfYear")
+    println("Апогей орбиты: $orbitApogeeMeters")
 }
