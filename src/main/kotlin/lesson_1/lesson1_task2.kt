@@ -7,7 +7,6 @@ fun main() {
     println("Количество заказов: $totalOrdersCount")
     println("Сообщение: $thankYouMessage")
 
-    // Количество работников
     var totalEmployeesCount: Int = 2000
     println("Количество работников: $totalEmployeesCount")
 
