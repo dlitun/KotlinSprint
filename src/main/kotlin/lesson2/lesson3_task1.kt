@@ -11,6 +11,5 @@ fun main() {
     val arrivalHour = (arrivalTotalMinutes / 60) % 24
     val arrivalMinute = arrivalTotalMinutes % 60
 
-    // Вывод
     println("Поезд прибудет в $arrivalHour:${arrivalMinute.toString().padStart(2, '0')}")
 }
