@@ -1,1 +1,1 @@
-package lesson_1
+package org.example.lesson2
