@@ -1,9 +1,9 @@
 package lesson_5
 
-fun main() {
-    const val SECONDS_IN_HOUR = 3600
-    const val SECONDS_IN_MINUTE = 60
+const val SECONDS_IN_HOUR = 3600
+const val SECONDS_IN_MINUTE = 60
 
+fun main() {
     val totalSeconds = 6480
 
     val hours = totalSeconds / SECONDS_IN_HOUR
