@@ -4,7 +4,7 @@ const val ONE_SECOND_MS = 1000L
 
 fun main() {
     print("Введите количество секунд: ")
-    var counter = readLine()!!.toInt()
+    var counter = readln().toInt()
 
     while (counter > 0) {
         println("Осталось секунд: $counter")
