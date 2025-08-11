@@ -3,16 +3,16 @@ package lesson6_task1
 fun main() {
     println("Регистрация")
     print("Придумайте логин: ")
-    val registeredLogin = readLine() ?: ""
+    val registeredLogin = readln()
     print("Придумайте пароль: ")
-    val registeredPassword = readLine() ?: ""
+    val registeredPassword = readln()
 
     println("Авторизация")
     while (true) {
         print("Введите логин: ")
-        val login = readLine() ?: ""
+        val login = readln()
         print("Введите пароль: ")
-        val password = readLine() ?: ""
+        val password = readln()
 
         if (login == registeredLogin && password == registeredPassword) {
             println("Авторизация прошла успешно")
