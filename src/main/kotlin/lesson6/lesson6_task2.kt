@@ -4,13 +4,9 @@ const val ONE_SECOND_MS = 1000L
 
 fun main() {
     print("Введите количество секунд: ")
-    val seconds = readLine()!!.toInt()
-    var counter = seconds
+    val seconds = readln().toInt()
 
-    while (counter > 0) {
-        Thread.sleep(ONE_SECOND_MS)
-        counter--
-    }
+    Thread.sleep(seconds * ONE_SECOND_MS)
 
     println("Прошло $seconds секунд")
 }
