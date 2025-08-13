@@ -20,13 +20,12 @@ fun main() {
         if (guess == secretNumber) {
             println("Это была великолепная игра!")
             return
-        } else {
-            attempts--
-            if (attempts > 0) {
-                println("Неверно. Осталось попыток: $attempts")
-            } else {
-                println("Было загадано число $secretNumber")
-            }
+        }
+
+        attempts--
+        if (attempts > 0) {
+            println("Неверно. Осталось попыток: $attempts")
         }
     }
+    println("Было загадано число $secretNumber")
 }
