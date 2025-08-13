@@ -5,27 +5,26 @@ const val MAX = 9
 const val MAX_ATTEMPTS = 3
 
 fun main() {
-    var attempts = MAX_ATTEMPTS
+    var attemptsLeft = MAX_ATTEMPTS
 
-    while (attempts > 0) {
-        val a = (MIN..MAX).random()
-        val b = (MIN..MAX).random()
-        val correct = a + b
+    while (attemptsLeft > 0) {
+        val firstNumber = (MIN..MAX).random()
+        val secondNumber = (MIN..MAX).random()
+        val correctAnswer = firstNumber + secondNumber
 
-        print("Докажите, что вы не бот. Сложите: $a + $b = ")
-        val answer = readln().toIntOrNull()
+        print("Докажите, что вы не бот. Сложите: $firstNumber + $secondNumber = ")
+        val userAnswer = readln().toIntOrNull()
 
-        if (answer == correct) {
+        if (userAnswer == correctAnswer) {
             println("Добро пожаловать!")
             return
-        } else {
-            attempts--
-            if (attempts > 0) {
-                println("Неверно. Осталось попыток: $attempts")
-            } else {
-                println("Доступ запрещен")
-            }
+        }
+
+        attemptsLeft--
+        if (attemptsLeft > 0) {
+            println("Неверно. Осталось попыток: $attemptsLeft")
         }
     }
-}
 
+    println("Доступ запрещен")
+}
