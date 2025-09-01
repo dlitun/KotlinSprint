@@ -2,23 +2,31 @@ package lesson7_task5
 
 fun main() {
     print("Введите длину пароля (минимум 6): ")
-    val length = readLine()!!.toInt()
+    val length = readln().toInt()
 
     if (length < 6) {
         println("Пароль должен быть не короче 6 символов")
         return
     }
 
-    val digits = "0123456789"
-    val lowers = "abcdefghijklmnopqrstuvwxyz"
-    val uppers = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    val digits = ('0'..'9')
+    val lowers = ('a'..'z')
+    val uppers = ('A'..'Z')
+
     val allChars = digits + lowers + uppers
 
-    var password = ""
+    val passwordChars = mutableListOf<Char>()
+    passwordChars += digits.random()
+    passwordChars += lowers.random()
+    passwordChars += uppers.random()
 
-    for (i in 1..length) {
-        password += allChars.random()
+    repeat(length - 3) {
+        passwordChars += allChars.random()
     }
+
+    passwordChars.shuffle()
+
+    val password = passwordChars.joinToString("")
 
     println("Ваш пароль: $password")
 }
