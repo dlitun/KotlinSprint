@@ -13,7 +13,7 @@ fun main() {
 
     val result = uniqueSorted.mapIndexed { index, item ->
         if (index == 0) item.replaceFirstChar { it.uppercase() } else item
-    }
+    }.joinToString(", ", postfix = ".")
 
-    println(result.joinToString(", "))
+    println(result)
 }
