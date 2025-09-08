@@ -9,11 +9,11 @@ fun main() {
         ingredients.add(input.lowercase())
     }
 
-    val uniqueSorted = ingredients.toSet().sorted()
-
-    val result = uniqueSorted.mapIndexed { index, item ->
-        if (index == 0) item.replaceFirstChar { it.uppercase() } else item
-    }.joinToString(", ", postfix = ".")
+    val result = ingredients
+        .toSet()
+        .sorted()
+        .joinToString(separator = ", ", postfix = ".")
+        .replaceFirstChar { it.uppercase() }
 
     println(result)
 }
