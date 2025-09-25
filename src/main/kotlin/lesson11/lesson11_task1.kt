@@ -1,4 +1,11 @@
-package lesson11
+package lesson11_task1
+
+class User(
+    val id: Int,
+    val login: String,
+    var password: String,
+    val email: String
+)
 
 fun main() {
     val user1 = User(
