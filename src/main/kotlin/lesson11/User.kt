@@ -1,8 +1,8 @@
-package lesson_11
+package lesson11
 
 class User(
     val id: Int,
-    var login: String,
+    val login: String,
     var password: String,
-    var email: String,
+    val email: String
 )
