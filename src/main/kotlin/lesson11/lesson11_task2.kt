@@ -13,14 +13,13 @@ class User2(
         println("id = $id")
         println("login = $login")
         println("email = $email")
-        println("bio = $bio")
+        println("bio = ${if (bio.isEmpty()) "No data" else bio}")
         println()
     }
 
     fun setBio() {
         println("Enter your bio:")
-        val input = readln()
-        bio = input
+        bio = readln()
         println("Bio has been updated!\n")
     }
 
