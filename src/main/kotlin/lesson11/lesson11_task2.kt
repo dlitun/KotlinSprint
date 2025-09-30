@@ -3,9 +3,9 @@ package lesson11_task2
 class User2(
     val id: Int,
     val login: String,
-    var password: String,
+    private var password: String,
     val email: String,
-    var bio: String = ""
+    var bio: String? = null
 ) {
 
     fun printInfo() {
@@ -13,13 +13,14 @@ class User2(
         println("id = $id")
         println("login = $login")
         println("email = $email")
-        println("bio = ${if (bio.isEmpty()) "No data" else bio}")
+        println("bio = ${bio ?: "No data"}")
         println()
     }
 
     fun setBio() {
         println("Enter your bio:")
-        bio = readln()
+        val input = readln().ifBlank { null }
+        bio = input
         println("Bio has been updated!\n")
     }
 
@@ -29,8 +30,7 @@ class User2(
 
         if (current == password) {
             println("Password is correct. Enter a new password:")
-            val newPass = readln()
-            password = newPass
+            password = readln()
             println("Password has been successfully changed!\n")
         } else {
             println("Incorrect current password. Password was not changed.\n")
@@ -43,7 +43,7 @@ fun main() {
         id = 3,
         login = "maria2025",
         password = "12345",
-        email = "maria@example.com",
+        email = "maria@example.com"
     )
 
     user.printInfo()
