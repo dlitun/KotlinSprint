@@ -2,15 +2,9 @@ package lesson12_task3
 
 class WeatherDayV3(dayTempK: Int, nightTempK: Int, precipitation: Boolean) {
 
-    var dayTemperature: Int
-    var nightTemperature: Int
-    var hasPrecipitation: Boolean
-
-    init {
-        dayTemperature = dayTempK - 273
-        nightTemperature = nightTempK - 273
-        hasPrecipitation = precipitation
-    }
+    var dayTemperature = dayTempK - 273
+    var nightTemperature = nightTempK - 273
+    var hasPrecipitation = precipitation
 
     fun printWeather() {
         println("Day temperature: $dayTemperature deg C")
