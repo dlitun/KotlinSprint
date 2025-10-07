@@ -1,7 +1,6 @@
 package lesson12_task1
 
-class WeatherDay() {
-
+class WeatherDay {
     var dayTemperature = 0
     var nightTemperature = 0
     var hasPrecipitation = false
