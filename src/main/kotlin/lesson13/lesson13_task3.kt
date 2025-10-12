@@ -15,7 +15,9 @@ fun main() {
         ContactV3("Oleg", 89887775544, null)
     )
 
-    val companies = contacts.map { it.company }.filterNotNull()
+    val companies = contacts
+        .mapNotNull { it.company }
+        .filter { it.lowercase() != "null" }
 
     println("Company list: $companies")
 }
