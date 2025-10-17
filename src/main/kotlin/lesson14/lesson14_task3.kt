@@ -1,5 +1,7 @@
 package lesson14_task3
 
+import kotlin.math.pow
+
 abstract class Figure(val color: String) {
     abstract fun calculateArea(): Double
     abstract fun calculatePerimeter(): Double
@@ -7,7 +9,7 @@ abstract class Figure(val color: String) {
 
 class Circle(color: String, val radius: Double) : Figure(color) {
     override fun calculateArea(): Double {
-        return Math.PI * radius * radius
+        return Math.PI * radius.pow(2)
     }
 
     override fun calculatePerimeter(): Double {
