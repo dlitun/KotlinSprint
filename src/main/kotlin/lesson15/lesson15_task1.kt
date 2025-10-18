@@ -1,26 +1,26 @@
 package lesson15_task1
 
-interface Flying {
+interface Flyable {
     fun fly()
 }
 
-interface Swimming {
+interface Floating {
     fun swim()
 }
 
-class Seagull : Flying {
+class Seagull : Flyable {
     override fun fly() {
         println("The seagull flies over the sea")
     }
 }
 
-class Crucian : Swimming {
+class Crucian : Floating {
     override fun swim() {
         println("The crucian swims in the pond")
     }
 }
 
-class Duck : Flying, Swimming {
+class Duck : Flyable, Floating {
     override fun fly() {
         println("The duck flies low over the ground")
     }
