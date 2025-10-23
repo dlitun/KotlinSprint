@@ -1,20 +1,24 @@
 package lesson16_task2
 
+import kotlin.math.pow
+
 class Circle(private val radius: Double) {
 
-    private val pi = 3.14
-
-    fun calculateCircumference(): Double {
-        return 2 * pi * radius
+    companion object {
+        const val PI = 3.14
     }
 
-    fun calculateArea(): Double {
-        return pi * radius * radius
+    fun getCircumference(): Double {
+        return 2 * PI * radius
+    }
+
+    fun getArea(): Double {
+        return PI * radius.pow(2)
     }
 }
 
 fun main() {
     val circle = Circle(5.0)
-    println("Circumference: ${circle.calculateCircumference()}")
-    println("Area: ${circle.calculateArea()}")
+    println("Circumference: ${circle.getCircumference()}")
+    println("Area: ${circle.getArea()}")
 }
