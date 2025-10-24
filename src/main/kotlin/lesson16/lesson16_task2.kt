@@ -2,11 +2,9 @@ package lesson16_task2
 
 import kotlin.math.pow
 
-class Circle(private val radius: Double) {
+private const val PI = 3.14
 
-    companion object {
-        const val PI = 3.14
-    }
+class Circle(private val radius: Double) {
 
     fun getCircumference(): Double {
         return 2 * PI * radius
