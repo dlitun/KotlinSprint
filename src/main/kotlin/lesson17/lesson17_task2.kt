@@ -2,26 +2,13 @@ package lesson17_task2
 
 class Ship(
     name: String,
-    speed: Double,
-    port: String
+    var speed: Double,
+    var port: String
 ) {
 
     var name: String = name
-        get() = field
         set(value) {
             println("You cannot change the ship's name!")
-        }
-
-    var speed: Double = speed
-        get() = field
-        set(value) {
-            field = value
-        }
-
-    var port: String = port
-        get() = field
-        set(value) {
-            field = value
         }
 }
 
@@ -32,8 +19,7 @@ fun main() {
     println("Average speed: ${ship.speed} knots")
     println("Home port: ${ship.port}")
 
-    ship.name = "Flying Dutchman"
-
+    ship.name = "Flying Dutchman" // Попытка изменить имя
     ship.speed = 30.0
     ship.port = "Tortuga"
 
