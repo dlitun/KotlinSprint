@@ -6,47 +6,66 @@ interface Movable {
 
 interface PassengerCarrier {
     val maxPassengers: Int
-    var passengers: Int
-
-    fun loadPassengers(n: Int) {
-        passengers = (passengers + n).coerceAtMost(maxPassengers)
-    }
-
-    fun unloadPassengers(n: Int) {
-        passengers = (passengers - n).coerceAtLeast(0)
-    }
+    fun currentPassengers(): Int
+    fun loadPassengers(n: Int)
+    fun unloadPassengers(n: Int)
 }
 
 interface CargoCarrier {
     val maxCargoTons: Double
-    var cargoTons: Double
-
-    fun loadCargo(t: Double) {
-        cargoTons = (cargoTons + t).coerceAtMost(maxCargoTons)
-    }
-
-    fun unloadCargo(t: Double) {
-        cargoTons = (cargoTons - t).coerceAtLeast(0.0)
-    }
+    fun currentCargoTons(): Double
+    fun loadCargo(t: Double)
+    fun unloadCargo(t: Double)
 }
 
 class Truck : Movable, PassengerCarrier, CargoCarrier {
-    override val maxPassengers = 1
-    override var passengers = 0
-    override val maxCargoTons = 2.0
-    override var cargoTons = 0.0
+    override val maxPassengers: Int = 1
+    private var passengers: Int = 0
+
+    override fun currentPassengers(): Int = passengers
+
+    override fun loadPassengers(n: Int) {
+        passengers = (passengers + n).coerceAtMost(maxPassengers)
+    }
+
+    override fun unloadPassengers(n: Int) {
+        passengers = (passengers - n).coerceAtLeast(0)
+    }
+
+    override val maxCargoTons: Double = 2.0
+    private var cargoTons: Double = 0.0
+
+    override fun currentCargoTons(): Double = cargoTons
+
+    override fun loadCargo(t: Double) {
+        cargoTons = (cargoTons + t).coerceAtMost(maxCargoTons)
+    }
+
+    override fun unloadCargo(t: Double) {
+        cargoTons = (cargoTons - t).coerceAtLeast(0.0)
+    }
 
     override fun move(to: String) {
-        println("Truck is moving to $to")
+        println("Truck is moving to $to (pax=${currentPassengers()}, cargo=${currentCargoTons()} t)")
     }
 }
 
 class Car : Movable, PassengerCarrier {
-    override val maxPassengers = 3
-    override var passengers = 0
+    override val maxPassengers: Int = 3
+    private var passengers: Int = 0
+
+    override fun currentPassengers(): Int = passengers
+
+    override fun loadPassengers(n: Int) {
+        passengers = (passengers + n).coerceAtMost(maxPassengers)
+    }
+
+    override fun unloadPassengers(n: Int) {
+        passengers = (passengers - n).coerceAtLeast(0)
+    }
 
     override fun move(to: String) {
-        println("Car is moving to $to")
+        println("Car is moving to $to (pax=${currentPassengers()})")
     }
 }
 
