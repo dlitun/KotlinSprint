@@ -3,7 +3,7 @@ package lesson18_task2
 abstract class Dice(
     private val sides: Int
 ) {
-    open fun roll() {
+    fun roll() {
         val result = (1..sides).random()
         println("$sides-sided dice rolled: $result")
     }
