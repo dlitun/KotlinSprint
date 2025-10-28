@@ -1,7 +1,7 @@
 package lesson18_task3
 
-open class Animal(val name: String) {
-    open fun eat() {}
+abstract class Animal(val name: String) {
+    abstract fun eat()
     open fun sleep() {
         println("$name -> sleeping")
     }
@@ -32,5 +32,8 @@ fun main() {
         Cat("Misty")
     )
 
-    animals.forEach { it.eat() }
+    animals.forEach {
+        it.eat()
+        it.sleep()
+    }
 }
