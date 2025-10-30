@@ -10,7 +10,7 @@ class Category(
 
 class Ingredient(
     val name: String,
-    val quantity: Double,
+    val quantity: String,
     val unitOfMeasure: String,
 )
 
