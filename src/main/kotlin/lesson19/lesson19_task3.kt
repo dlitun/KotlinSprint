@@ -1,7 +1,9 @@
 package lesson19_task3
 
 class Spaceship {
+
     fun launch() {
+        TODO("Add launch logic here later")
     }
 
     fun land() {
