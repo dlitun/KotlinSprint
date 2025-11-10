@@ -3,7 +3,8 @@ package lesson20_task5
 import kotlin.random.Random
 
 class Robot {
-    private var modifier: ((String) -> String)? = null
+    private var modifier: (String) -> String = { it }
+
     private val phrases = listOf(
         "Hello, human!",
         "System check complete.",
@@ -14,8 +15,7 @@ class Robot {
 
     fun say() {
         val phrase = phrases.random()
-        val output = modifier?.invoke(phrase) ?: phrase
-        println(output)
+        println(modifier(phrase))
     }
 
     fun setModifier(mod: (String) -> String) {
