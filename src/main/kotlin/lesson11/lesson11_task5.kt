@@ -1,16 +1,16 @@
 package lesson11_task5
 
+data class ForumUser(
+    val userId: Int,
+    val userName: String
+)
+
+data class ForumMessage(
+    val authorId: Int,
+    val message: String
+)
+
 class Forum {
-
-    class ForumUser(
-        val userId: Int,
-        val userName: String
-    )
-
-    class ForumMessage(
-        val authorId: Int,
-        val message: String
-    )
 
     private class UserBuilder {
         private var id: Int = -1
@@ -34,8 +34,6 @@ class Forum {
     private val messages = mutableListOf<ForumMessage>()
     private var nextUserId = 1
 
-    private val usersById get() = users.associateBy { it.userId }
-
     fun createNewUser(userName: String): ForumUser {
         val user = UserBuilder()
             .id(nextUserId++)
@@ -46,9 +44,10 @@ class Forum {
     }
 
     fun createNewMessage(authorId: Int, message: String): ForumMessage? {
-        if (usersById[authorId] == null) return null
+        val author = users.find { it.userId == authorId } ?: return null
+
         val msg = MessageBuilder()
-            .author(authorId)
+            .author(author.userId)
             .text(message)
             .build()
         messages += msg
@@ -56,10 +55,9 @@ class Forum {
     }
 
     fun printThread() {
-        val map = usersById
         for (m in messages) {
-            val author = map[m.authorId]?.userName ?: "Unknown"
-            println("$author: ${m.message}")
+            val authorName = users.find { it.userId == m.authorId }?.userName ?: "Unknown"
+            println("$authorName: ${m.message}")
         }
     }
 }
