@@ -17,10 +17,13 @@ fun main() {
         distanceLightYears = 4.37
     )
 
-    val (name, description, dateTime, distance) = alphaCentauri
+    val placeName = alphaCentauri.component1()
+    val placeDescription = alphaCentauri.component2()
+    val eventDateTime = alphaCentauri.component3()
+    val distance = alphaCentauri.component4()
 
-    println("Name: $name")
-    println("Description: $description")
-    println("Date and time: $dateTime")
+    println("Name: $placeName")
+    println("Description: $placeDescription")
+    println("Date and time: $eventDateTime")
     println("Distance from Earth: $distance light years")
 }
