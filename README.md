@@ -64,7 +64,7 @@
 
 - Kotlin
 - IntelliJ IDEA / Android Studio
-- Git
+- Git / GitHub
 
 ---
 
